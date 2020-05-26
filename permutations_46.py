@@ -1,4 +1,4 @@
-from collections import deque
+    from collections import deque
 class Solution:
     def permute(self, nums: List[int]) -> List[List[int]]:
 
@@ -8,6 +8,9 @@ class Solution:
 
         for num in nums:
             n = len(permutations)
+
+
+            permutations.
             for _ in range(n):
                 old_permutation = permutations.popleft()
                 for i in range(len(old_permutation) + 1):
@@ -19,3 +22,15 @@ class Solution:
                         permutations.append(new_permutation)
 
         return result
+
+    def permutation_2
+        ans = [[]]
+        for n in nums:
+            new_ans = []
+            for l in ans:
+                for i in xrange(len(l) + 1):
+                    new_ans.append(l[:i] + [n] + l[i:])
+                    if i < len(l) and l[i] == n:
+                        break
+            ans = new_ans
+        return ans
